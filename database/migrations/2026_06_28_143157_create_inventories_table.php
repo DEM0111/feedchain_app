@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('inventories', function (Blueprint $table) {
+            $table->id();
+            $table->enum('inventory_type', [
+                'raw_material',
+                'finished_product'
+            ]);
+            $table->foreignId('raw_material_id')
+                ->nullable()
+                ->constrained();
+            $table->foreignId('feed_product_id')
+                ->nullable()
+                ->constrained();
+            $table->foreignId('reference_batch_id')
+                ->nullable()
+                ->constrained('production_batches');
+            $table->decimal('quantity_available', 10, 2);
+            $table->string('unit');
+            $table->date('last_updated');
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('inventories');
+    }
+};

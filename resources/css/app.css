@@ -1,0 +1,31 @@
+.create-account-wrap {
+    margin-top: 1rem;
+    text-align: center;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.create-account-wrap p {
+    margin: 0 0 0.75rem;
+}
+
+.create-account-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #bfdbfe;
+    border-radius: 0.875rem;
+    padding: 0.85rem 1rem;
+    color: #1d4ed8;
+    background: #eff6ff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.create-account-button:hover {
+    border-color: #2563eb;
+    color: #ffffff;
+    background: #2563eb;
+}
